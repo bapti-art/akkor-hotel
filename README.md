@@ -25,14 +25,14 @@ Une plateforme complète de réservation d'hôtels construite avec TypeScript, E
 
 - **Node.js** >= 18.x
 - **npm** >= 9.x
-- **MongoDB** >= 6.x (en local ou URI distant)
+- **Docker Desktop** (MongoDB est exécuté dans un conteneur Docker)
 
 ## Installation
 
 ### Cloner le dépôt
 ```bash
 git clone git clone https://github.com/bapti-art/akkor-hotel.git
-cd akkor-hotel-final
+cd akkor-hotel
 ```
 
 ### Installer toutes les dépendances (backend + frontend)
@@ -73,6 +73,25 @@ Variables d'environnement:
 ## Exécution de l'application
 
 ### Développement
+
+### Démarrer Docker Desktop (important: attendre que le moteur Docker soit “Running”)
+
+### Lancer MongoDB
+```bash
+docker run -d --name akkor-mongo -p 27017:27017 mongo:7
+```
+
+### Si le conteneur existe déjà, démarrez-le avec:
+```bash
+docker start akkor-mongo
+```
+
+### Pour arrêter MongoDB:
+```bash
+docker stop akkor-mongo
+```
+
+Le backend utilise `MONGODB_URI=mongodb://localhost:27017/akkor-hotel` par défaut (voir `backend/.env.example`).
 
 ### Démarrer le backend (port 3000)
 ```bash
@@ -165,7 +184,7 @@ npm run cypress:run
 ## Structure du projet
 
 ```
-akkor-hotel-final/
+akkor-hotel/
 ├── backend/
 │   ├── src/
 │   │   ├── config/        # Configuration DB, env, Swagger
