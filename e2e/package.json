@@ -1,0 +1,13 @@
+{
+  "name": "akkor-hotel-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:e2e": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.14.2"
+  } 
+}

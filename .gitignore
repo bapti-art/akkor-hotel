@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db 
+
+# Coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cypress
+e2e/cypress/screenshots/
+e2e/cypress/videos/
+e2e/cypress/downloads/
+
+# TypeScript
+*.tsbuildinfo
