@@ -1,4 +1,5 @@
 # Akkor Hôtel
+# Par Jean-Baptiste EBANE MBENG
 
 Une plateforme complète de réservation d'hôtels construite avec TypeScript, Express, MongoDB et React.
 
