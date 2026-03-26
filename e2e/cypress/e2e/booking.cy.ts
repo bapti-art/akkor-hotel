@@ -17,6 +17,7 @@ describe('Flux de réservation', () => {
     cy.visit('/');
     cy.get('.hotel-card').first().click();
     cy.url().should('include', '/hotels/');
+    cy.contains('button', 'Réserver Maintenant').click();
  
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -28,14 +29,14 @@ describe('Flux de réservation', () => {
     cy.get('input[type="date"]').first().type(formatDate(tomorrow));
     cy.get('input[type="date"]').last().type(formatDate(dayAfter));
     cy.get('input[type="number"]').clear().type('2');
-    cy.contains('button', 'Réserver Maintenant').click();
-    
-    cy.contains('Réservation créée avec succès!').should('be.visible');
+    cy.contains('button', 'Confirmer la Réservation').click();
+
+    cy.url().should('include', '/bookings');
   });
 
   it('devrait afficher les réservations sur la page "Mes réservations"', () => {
     cy.visit('/bookings');
-    cy.get('.booking-card, table tbody tr').should('have.length.at.least', 1);
+    cy.get('.booking-card').should('have.length.at.least', 1);
   });
 
   it('devrait rediriger les utilisateurs non authentifiés depuis la page des réservations', () => {

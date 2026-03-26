@@ -115,9 +115,9 @@ npm run seed
 ```
 
 Cela crée:
-- **Administrateur**: admin@akkor.com / Admin123!
-- **Employé**: employee@akkor.com / Employee123!
-- **Utilisateur**: user@akkor.com / User123!
+- **Administrateur**: admin@akkor-hotel.com / admin123
+- **Employé**: employee@akkor-hotel.com / employee123
+- **Utilisateur**: user@akkor-hotel.com / user123
 - 5 hôtels d'exemple
 
 ## Documentation API

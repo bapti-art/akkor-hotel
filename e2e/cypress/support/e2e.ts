@@ -1,10 +1,17 @@
 /// <reference types="cypress" />
 
 Cypress.Commands.add('register', (email: string, pseudo: string, password: string) => {
-  cy.request('POST', 'http://localhost:3000/api/auth/register', {
+  cy.request({
+    method: 'POST',
+    url: 'http://localhost:3000/api/auth/register',
+    failOnStatusCode: false,
+    body: {
     email,
     pseudo,
     password,
+    },
+  }).then((res) => {
+    expect([201, 409]).to.include(res.status);
   });
 }); 
 

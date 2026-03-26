@@ -24,7 +24,7 @@ describe('Navigation dans les hôtels', () => {
 
   it('devrait filtrer les hôtels par nom', () => {
     cy.visit('/');
-    cy.get('input[placeholder="Nom de l\'hôtel..."]').type('Grand');
+    cy.get('input[placeholder="Nom d\'hôtel..."]').type('Grand');
     cy.contains('button', 'Rechercher').click();
   });
 });
